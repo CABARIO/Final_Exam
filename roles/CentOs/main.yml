@@ -1,0 +1,18 @@
+  GNU nano 6.2                            main.yml                                     
+---
+
+ - name: Install Apache and PHP
+    dnf:
+      name:
+        - httpd
+        - apache2
+        - libaapche2-mod-php
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+ - name: Install Nagios in CentOS
+    dnf:
+      name:
+        - nagios
+      state: latest
+    when: ansible_distribution == "CentOS"

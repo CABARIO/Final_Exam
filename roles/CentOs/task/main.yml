@@ -1,0 +1,15 @@
+---
+
+ - name: Install Apache in CentOS
+    dnf:
+      name:
+        - httpd
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+ - name: Install Nagios in CentOS
+    dnf:
+      name:
+        - nagios
+      state: latest
+    when: ansible_distribution == "CentOS"
